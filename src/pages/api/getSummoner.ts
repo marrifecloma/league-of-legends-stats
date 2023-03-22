@@ -2,7 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import * as summonerSpells from './summonerSpellByKeys.json'
-import * as runesRefroged from './runesRefroged.json'
 
 import { RiotAPI, RiotAPITypes, PlatformId } from '@fightmegg/riot-api'
 
