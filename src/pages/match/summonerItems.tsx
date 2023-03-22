@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function SummonerItems({summonerItems}: Props) {
-  return (
+  return (summonerItems) ? (
     <ImageList>
         {summonerItems.map((item: any) => {
             return (item)
@@ -26,5 +26,5 @@ export default function SummonerItems({summonerItems}: Props) {
                 )
         })}
     </ImageList>
-  )
+  ) : null
 }

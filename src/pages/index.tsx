@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { Box, Button, Grid, InputAdornment, TextField, ThemeProvider, CircularProgress, Typography } from '@mui/material';
 
-import {theme} from './theme/theme'
+import {theme} from '../theme/theme'
 import { AccountCircle } from '@mui/icons-material';
 
 import useSWR from 'swr';

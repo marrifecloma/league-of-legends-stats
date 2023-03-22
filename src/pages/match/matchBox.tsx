@@ -19,6 +19,12 @@ const Div = styled('div')(({ theme }) => ({
   }));
 
 export default function MatchBox({matchHistory}: Props) {
+    if (!matchHistory) {
+        return (
+            <Typography variant="subtitle1" align="center">{`No matches found`}</Typography>
+        )
+    }
+
   const backgroundColor = matchHistory.gameWon ? '#AFE1AF' : '#E34234'
   const gameWonText
     = matchHistory.gameWon ? (
