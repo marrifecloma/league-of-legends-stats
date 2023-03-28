@@ -1,4 +1,4 @@
-import { Avatar, ImageList, ImageListItem } from '@mui/material';
+import { Avatar, Stack } from '@mui/material';
 import * as React from 'react'
 
 interface Props {
@@ -7,24 +7,23 @@ interface Props {
 
 export default function SummonerItems({summonerItems}: Props) {
   return (summonerItems) ? (
-    <ImageList>
-        {summonerItems.map((item: any) => {
-            return (item)
+    <Stack direction="row" spacing={1} padding={2}>
+        {summonerItems.map((item: any, index: number) => {
+            const itemImage = (item)
                 ? (
-                    <ImageListItem>
-                        <Avatar
-                            variant="square"
-                            src={item.image}
-                            alt={item.name}
-                        />
-                    </ImageListItem>
+                    <Avatar
+                        variant="square"
+                        src={item.image}
+                        alt={item.name}
+                    />
                 )
                 : (
-                    <ImageListItem>
-                        <Avatar variant="square" sx={{ bgColor: "#1C2833"}}>{' '}</Avatar>
-                    </ImageListItem>
+                    <Avatar variant="square" sx={{ bgColor: "#1C2833"}}>{' '}</Avatar>
                 )
+            return (
+                <span key={`item-${index}`}>{itemImage}</span>
+            )
         })}
-    </ImageList>
+    </Stack>
   ) : null
 }
